@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Aurora Gallery</h1>
+        <p>Explore a curated collection of breathtaking landscapes and cityscapes</p>
+    </header>
+
+    <main class="gallery-wrapper">
+        <div class="gallery-controls">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="urban">Urban</button>
+            <button class="filter-btn" data-filter="abstract">Abstract</button>
+        </div>
+
+        <div class="gallery" id="gallery" role="list" aria-label="Image gallery"></div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close lightbox">
+            <svg viewBox="0 0 24 24">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </button>
+
+        <div class="lightbox-counter"><span id="currentIndex">1</span> / <span id="totalCount">12</span></div>
+
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous image">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
+        </button>
+
+        <div class="lightbox-content">
+            <div class="lightbox-img-wrapper">
+                <img class="lightbox-img" id="lightboxImg" src="" alt="">
+            </div>
+            <div class="lightbox-caption">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxCategory"></p>
+            </div>
+        </div>
+
+        <button class="lightbox-btn lightbox-next" aria-label="Next image">
+            <svg viewBox="0 0 24 24">
+                <path d="M9 18l6-6-6-6" />
+            </svg>
+        </button>
+
+        <div class="lightbox-thumbnails" id="thumbnails"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
